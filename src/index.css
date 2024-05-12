@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+body {
+  @apply font-Roboto bg-white dark:bg-gray-900 text-black dark:text-white;
+}
+h1 {
+  @apply text-3xl md:text-5xl font-extrabold  text-black dark:text-white;
+}
+h3 {
+  @apply font-bold text-2xl;
+}
+input {
+  @apply outline-none;
+}
+button:disabled {
+  @apply cursor-not-allowed opacity-45;
+}
+::-webkit-scrollbar {
+  @apply w-2 rounded-sm border-l border-white bg-slate-300 cursor-pointer;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-sm bg-slate-400 dark:bg-slate-700 cursor-pointer;
+}
+.container {
+  @apply mx-auto p-3 lg:p-0;
+}
+.my-header {
+  @apply bg-white text-primary-900 dark:bg-gray-800  dark:text-white shadow-sm pt-4 pb-3 px-2 md:px-0 md:py-4;
+}
+.my-header .header {
+  @apply flex items-center justify-between font-normal;
+}
+.nav-links {
+  @apply text-gray-800 hover:text-primary-700 dark:text-gray-400 dark:hover:text-white 
+  transition-colors duration-200 ease-linear font-medium;
+}
+.my-header .header .resgister {
+  @apply bg-transparent hover:bg-gray-100 dark:hover:bg-gray-500;
+}
+
+.avater {
+  @apply w-8 h-8 object-contain text-primary-400;
+}
+.my-header .header .user {
+  @apply flex items-center gap-3 sm:gap-[6px] md:gap-5;
+}
+.my-header .header .user svg {
+  @apply cursor-pointer;
+}
+.theme {
+  @apply cursor-pointer w-fit h-fit rounded-full border border-gray-400 dark:border-white p-1 absolute top-24 sm:top-28 right-[5%];
+}
+
+@layer components {
+  .btn {
+    @apply text-white transition-colors duration-300 ease-linear p-2 md:px-4 md:py-2  rounded-md;
+  }
+  .auth .auth-container input {
+    @apply w-full p-2 rounded-md text-black dark:text-white border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800;
+  }
+}
+
+.auth {
+  @apply w-full h-screen flex justify-center items-center p-4 sm:p-0;
+}
+
+.auth .auth-container {
+  @apply p-3 max-w-full py-12  border border-gray-400;
+}
+
+.auth .auth-container .google {
+  @apply flex items-center self-center gap-2 btn text-gray-700 dark:text-white border  border-gray-300 dark:border-gray-600 bg-slate-100 dark:bg-gray-800;
+}
+.auth .auth-container .line {
+  @apply border-b border-b-gray-600 w-[45%];
+}
+
+.auth .auth-container .submit {
+  @apply w-full bg-primary-400 mt-3;
+}
+.auth .auth-container input.password-error {
+  @apply border-red-500 animate-vibration;
+}
+.error {
+  @apply text-red-500;
+}
+.cart-menue {
+  @apply flex absolute flex-col h-48 gap-4 bg-white dark:bg-gray-800 shadow-md p-5 top-2 right-1 rounded-md overflow-y-auto z-[2];
+}
+
+.delete-btn {
+  @apply text-center  md:p-0  text-red-500 hover:text-red-600   w-fit;
+}
+
+.footer {
+  @apply w-full flex flex-col gap-5 justify-center items-center bg-gray-100 dark:bg-gray-800 py-6;
+}
